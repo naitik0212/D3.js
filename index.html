@@ -10,14 +10,58 @@
 <body>
     <p>Lets start learning D3</p>
 
+    <p>Do you know about SVG? Here is an example of Smiley drawn with SVG!!</p>
+    <svg width="400" height="180">
+        <svg height="300" width="700">
+            <circle id="yellowcircle" cx="60" cy="60" r="50"  fill="yellow"stroke="black" stroke-width="2"/>
+            <ellipse cx="40" cy="50" rx="7" ry="14.5" style="fill:black;stroke:black;stroke-width:2" />
+
+            <ellipse cx="80" cy="50" rx="7" ry="14.5" style="fill:black;stroke:black;stroke-width:2" />
+            <ellipse id="blackellipse" cx="60" cy="85" rx="20" ry="8" fill="black"/>
+            <ellipse id="yellowellipse" cx="60" cy="83" rx="20" ry="8" fill="yellow"/>
+        </svg>
+    </svg>
+
 <script>
 //    Method Chaining by the dot
     d3.select("p")
         .text("You are learning D3")
         .style("color", "red");
 
-    d3.select("body").append("p").text("Hi! Whats Up?");
+    d3.select("body").append("p").text("Now lets learn SVG in D3");
     console.log(d3);
+
+//    Creating a canvas
+    var canvas = d3.select("body")
+                    .append("svg")
+                    .attr("width",500)
+                    .attr("height",500);
+
+//    Creating Circles, rectangle and squares
+
+    var circle = canvas.append("circle")
+                        .attr("cx",200)
+                        .attr("cy",200)
+                        .attr("r",50)
+                        .attr("fill","red");
+
+    var rect = canvas.append("rect")
+                            .attr("width",100)
+                            .attr("height",200)
+                            .attr("x",250)
+                            .attr("y",100);
+
+    var line = canvas.append("line")
+        .attr("x1",250)
+        .attr("x2",250)
+        .attr("y1",0)
+        .attr("y2",400)
+        .attr("stroke","blue")
+        .attr("stroke-width",2)
+
+
+
+
 
 
 </script>
